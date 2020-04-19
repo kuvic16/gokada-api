@@ -15,15 +15,15 @@ class CreateRecipientsTable extends Migration
     {
         Schema::create('recipients', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('order_id')->unsigned();
+            $table->integer('way_point_id')->unsigned();
             $table->string('name', 255);
             $table->string('phone', 255);
             $table->string('parcel_description', 1000);
             $table->timestamps();
 
-            $table->foreign('order_id')
+            $table->foreign('way_point_id')
                 ->references('id')
-                ->on('orders')
+                ->on('way_points')
                 ->onDelete('cascade');
 
             $table->index(['name']);

@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 class SettingPriceController extends Controller
 {
     /**
+     * Initialize the class
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

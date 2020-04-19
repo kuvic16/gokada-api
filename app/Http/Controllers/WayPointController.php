@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class WayPointController extends Controller
 {
+
+    /**
+     * Initialize the class
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -81,5 +90,32 @@ class WayPointController extends Controller
     public function destroy(WayPoint $wayPoint)
     {
         //
+    }
+
+    /**
+     * Update driver arrive info
+     *
+     * @return array
+     */
+    public function driverArrived(){
+
+    }
+
+    /**
+     * Update driver picked up parcel
+     *
+     * @return array
+     */
+    public function pickedupParcel(){
+
+    }
+
+    /**
+     * Update driver dropped off the parcel
+     *
+     * @return array
+     */
+    public function dropoffedParcel(){
+
     }
 }

@@ -69,6 +69,16 @@ class WayPoint extends Model
         return $this->belongsTo('App\Order');
     }
 
+
+    /**
+     * A way point has one recipient
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function recipient(){
+        return $this->hasOne('App\Recipient');
+    }
+
     public function statusLabel(){
 
     }

@@ -35,7 +35,7 @@ class Recipient extends Model
      * @var array
      */
     protected $fillable = [
-        'order_id', 'name', 'phone', 'parcel_description'
+        'way_point_id', 'name', 'phone', 'parcel_description'
     ];
 
 
@@ -58,11 +58,11 @@ class Recipient extends Model
 
 
     /**
-     * A recipient belongs to a order
+     * A recipient has one way point
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function order() {
-        return $this->belongsTo('App\Order');
+    public function wayPoint() {
+        return $this->hasOne('App\WayPoint', 'id', 'way_point_id');
     }
 }

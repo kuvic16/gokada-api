@@ -17,5 +17,18 @@ Route::get('/', function () {
         'version' => '1.0'
     ];
 });
-Route::get('/api/v1/storm_reports', 'ApiController@stormReports');
-Route::get('/api/v1/tornado_warning', 'ApiController@tornadoWarning');
+
+Route::group(['middleware' => 'web'], function () {
+    Route::get('/api/v1/authenticate', 'AuthenticationController@authenticate');
+    Route::post('/api/v1/register', 'AuthenticationController@register');
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+    Route::post('/api/v1/request-order', 'OrderController@requestOrder');
+    Route::post('/api/v1/request-delivery', 'OrderController@requestDelivery');
+    Route::post('/api/v1/driver-arrived', 'WayPointController@driverArrived');
+    Route::post('/api/v1/pickedup-parcel', 'WayPointController@pickedupParcel');
+    Route::post('/api/v1/dropoffed-parcel', 'WayPointController@dropoffedParcel');
+    Route::post('/api/v1/submit-rating', 'DriverRatingController@create');
+});
