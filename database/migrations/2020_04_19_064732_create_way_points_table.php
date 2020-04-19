@@ -15,7 +15,7 @@ class CreateWayPointsTable extends Migration
     {
         Schema::create('way_points', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('order_id')->unsigned();
+            $table->bigInteger('order_id')->unsigned();
             $table->string('pickup_location', 255);
             $table->string('dropoff_location', 255);
             $table->float('distance', 8, 2);

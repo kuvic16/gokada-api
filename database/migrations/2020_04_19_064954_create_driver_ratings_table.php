@@ -15,8 +15,8 @@ class CreateDriverRatingsTable extends Migration
     {
         Schema::create('driver_ratings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('order_id')->unsigned();
-            $table->integer('driver_id')->unsigned();
+            $table->bigInteger('order_id')->unsigned();
+            $table->bigInteger('driver_id')->unsigned();
             $table->integer('ratings')->unsigned();
             $table->string('comments', 500);
             $table->timestamps();

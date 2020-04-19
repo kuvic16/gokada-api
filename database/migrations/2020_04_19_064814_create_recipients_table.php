@@ -15,7 +15,7 @@ class CreateRecipientsTable extends Migration
     {
         Schema::create('recipients', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('way_point_id')->unsigned();
+            $table->bigInteger('way_point_id')->unsigned();
             $table->string('name', 255);
             $table->string('phone', 255);
             $table->string('parcel_description', 1000);

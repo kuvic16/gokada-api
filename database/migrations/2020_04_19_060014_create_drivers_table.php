@@ -20,7 +20,7 @@ class CreateDriversTable extends Migration
             $table->string('phone', 20)->unique();
             $table->timestamp('phone_verified_at')->nullable();
             $table->string('password', 255);
-            $table->integer('city_id')->unsigned();
+            $table->bigInteger('city_id')->unsigned();
             $table->string('license_number', 255);
             $table->date('license_expire_at')->nullable();
             $table->rememberToken();

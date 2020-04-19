@@ -16,9 +16,9 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->dateTime('order_at');
-            $table->integer('user_id')->unsigned();
-            $table->integer('driver_id')->unsigned();
-            $table->integer('setting_price_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('driver_id')->unsigned();
+            $table->bigInteger('setting_price_id')->unsigned();
             $table->dateTime('completed_at');
             $table->timestamps();
 

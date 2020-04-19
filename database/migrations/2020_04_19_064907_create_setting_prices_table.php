@@ -15,7 +15,7 @@ class CreateSettingPricesTable extends Migration
     {
         Schema::create('setting_prices', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('city_id')->unsigned();
+            $table->bigInteger('city_id')->unsigned();
             $table->decimal('price_km', 8, 2);
             $table->decimal('price_mn', 8, 2);
             $table->dateTime('start_at');

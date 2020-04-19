@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('phone', 20)->unique();
             $table->timestamp('phone_verified_at')->nullable();
             $table->string('password', 255);
-            $table->integer('country_id')->unsigned();
+            $table->bigInteger('country_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();
 

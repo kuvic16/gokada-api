@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCityTable extends Migration
+class CreateCitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,7 +17,7 @@ class CreateCityTable extends Migration
             $table->bigIncrements('id');
             $table->string('code', 20);
             $table->string('name', 100);
-            $table->integer('country_id')->unsigned();
+            $table->bigInteger('country_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('country_id')
